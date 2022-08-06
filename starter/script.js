@@ -37,6 +37,10 @@ const restaurant = {
 const { name, location, mainMenu } = restaurant;
 console.log(name, location, mainMenu);
 
+// using variable names that are different from the property names when extracting
+const { name: hotel, location: place, mainMenu: menuMain } = restaurant;
+console.log(hotel, location, menuMain);
+
 // Array destructuring
 // desturucturing is simply a way of unpacking values from an array or object into their own separate variables
 // we use array destructuring to  retrieve elements from an array and store them into variables in a very easy way
