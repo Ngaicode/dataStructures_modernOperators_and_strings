@@ -47,6 +47,15 @@ console.log(hotel, location, menuMain);
 const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
 
+// Mutating variables
+let d = 111;
+let e = 999;
+const obj = { d: 23, e: 7, f: 14 };
+console.log(obj);
+// we need to wrap them up in parenthesis
+({ d, e } = obj);
+console.log(d, e);
+
 // Array destructuring
 // desturucturing is simply a way of unpacking values from an array or object into their own separate variables
 // we use array destructuring to  retrieve elements from an array and store them into variables in a very easy way
