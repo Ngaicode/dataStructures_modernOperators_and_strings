@@ -32,6 +32,11 @@ const restaurant = {
   },
 };
 
+// destructuring objects
+// when destructuring objects ,we have to provide the variable names that ecactly match the property names of the vlues we are trying to unpack from an object
+const { name, location, mainMenu } = restaurant;
+console.log(name, location, mainMenu);
+
 // Array destructuring
 // desturucturing is simply a way of unpacking values from an array or object into their own separate variables
 // we use array destructuring to  retrieve elements from an array and store them into variables in a very easy way
