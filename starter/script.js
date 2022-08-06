@@ -27,6 +27,12 @@ const restaurant = {
     );
   },
 
+  orderPasta(ing1, ing2, ing3) {
+    console.log(
+      `here's your delicious  pasta of ${ing1} , ${ing2} and ${ing3}`
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -87,6 +93,15 @@ const str = "Mjomba";
 console.log(...str);
 const nameArr = [...str, , "s"];
 console.log(nameArr);
+
+const ingredients = [
+  prompt(`let's make pasta: Ingredient 1 ?`),
+  prompt(`ingredient 2?`),
+  prompt(`ingredient 3 ?`),
+];
+console.log(ingredients);
+restaurant.orderPasta(...ingredients);
+
 // // destructuring objects
 // // when destructuring objects ,we have to provide the variable names that ecactly match the property names of the vlues we are trying to unpack from an object
 // const { name, location, mainMenu } = restaurant;
