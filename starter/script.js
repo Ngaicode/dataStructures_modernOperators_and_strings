@@ -94,13 +94,21 @@ console.log(...str);
 const nameArr = [...str, , "s"];
 console.log(nameArr);
 
-const ingredients = [
-  prompt(`let's make pasta: Ingredient 1 ?`),
-  prompt(`ingredient 2?`),
-  prompt(`ingredient 3 ?`),
-];
-console.log(ingredients);
-restaurant.orderPasta(...ingredients);
+// real world example of using the spread operator to pass arguments to functions
+// const ingredients = [
+//   prompt(`let's make pasta: Ingredient 1 ?`),
+//   prompt(`ingredient 2?`)
+//   prompt(`ingredient 3 ?`),
+// // ];
+// console.log(ingredients);
+// // real world example of using the spread operator to pass arguments to functions
+// restaurant.orderPasta(...ingredients);
+
+// since es2018 ,we can use the spread operator on objects even though objects aren't iterable
+// Objects
+// we can use the spread operator on objects to create copies of the object
+const newRestaurant = { foundedIn: 2000, ...restaurant, founder: "mjomba" };
+console.log(newRestaurant);
 
 // // destructuring objects
 // // when destructuring objects ,we have to provide the variable names that ecactly match the property names of the vlues we are trying to unpack from an object
