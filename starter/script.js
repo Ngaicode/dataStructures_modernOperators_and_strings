@@ -56,6 +56,19 @@ console.log(obj);
 ({ d, e } = obj);
 console.log(d, e);
 
+// destructuring Nested Objects
+const { openingHours } = restaurant;
+// the syntax looks a bit weird
+// destructuring the sat object that we have extracted from opening
+const {
+  sat: { open, close },
+} = openingHours;
+console.log(open, close);
+
+// alternative syntax
+// const { openingHours :{sat :{open,close}}} = restaurant;
+// console.log(open,close);
+
 // Array destructuring
 // desturucturing is simply a way of unpacking values from an array or object into their own separate variables
 // we use array destructuring to  retrieve elements from an array and store them into variables in a very easy way
