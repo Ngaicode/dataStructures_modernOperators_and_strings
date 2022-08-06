@@ -74,3 +74,17 @@ console.log(restaurant.order(1, 2));
 // destructuring allows us to recieve multiple return values froma function
 const [starter, maindish] = restaurant.order(1, 2);
 console.log(starter, maindish);
+
+// destructuring nested arrays
+const nestedArray = [3, 4, [5, 6]];
+// destructuring works basically the same way when it comes to nested arrays,we can simply destructure na array inside an  array
+// the syantax looks like using the destructuring operator inside another destructuring operator,no big deal,it sounds complicated but it's not
+// nested destructuring basicaly looks like doing destructuring inside of destructuring
+const [uno, , [five, six]] = nestedArray;
+console.log(uno, five, six);
+
+// setting default values when destructuring
+// setting default values is so simple
+// if the element we are trying to destructure does not exist,it will simply be replaced by the default value of the destructuring operator
+const [p = 1, q = 1, r = 1] = [8, 6];
+console.log(p, q, r);
