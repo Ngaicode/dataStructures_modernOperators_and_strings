@@ -54,13 +54,39 @@ restaurant.orderDelivery({
 });
 
 // Spread operator
-// we use the spread operator to unpack the elements of an array into individual values separated by a comma
+// the spread operator is available on all javascript iterables ,eg strings,arrays,sets,maps
+// MAJOR ---we use the spread operator to unpack the elements of an array into individual values separated by a comma
 // the spread operator will expand an array into its individual elements
 // we mostly use the spread operator in cases where we'd require multiple values separated by commas eg in an array litteral or when passing arguments to a function
+// we can only use the spread operator when building an array or when passsing values to a function
+
 const arr = [5, 6, 7];
 console.log(...arr);
 const numb = [2, 3, 4, ...arr];
 console.log(numb);
+
+// a more practical example of array destructuring
+const menu = [...restaurant.mainMenu, "ugali", "skuma"];
+console.log(menu);
+
+// one of the most typical use case of the spread operator is to create shallow copies of arrays and also to merge separate arrays into one array
+
+// 1.creating shallow copies of array
+
+const trueUnrelatedCopy = [...restaurant.mainMenu];
+console.log(trueUnrelatedCopy);
+
+// 2. joining arrays into one
+
+const fullMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(fullMenu);
+
+// iterables are : strings ,arrays,maps, sets .NOT objects
+// 1.using the spread operator on  a string
+const str = "Mjomba";
+console.log(...str);
+const nameArr = [...str, , "s"];
+console.log(nameArr);
 // // destructuring objects
 // // when destructuring objects ,we have to provide the variable names that ecactly match the property names of the vlues we are trying to unpack from an object
 // const { name, location, mainMenu } = restaurant;
