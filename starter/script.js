@@ -16,6 +16,17 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  // declaring a method using the new object literal syntax
+  // by providing an object of options as an argument to a function and immediately destructuring it;we don't have to worry about the order at which we pass in arguments to a function since the destructuring operator will handle all that for us
+  // WE JUST PASS IN AN OBJECT OF OPTIONS AND THE OBJECT WILL BE DESTRUCTURED TO THE CORRECT ARGUMENTS REQUIRED TO CALL THAT FUNCTION
+  // PASS IN AN OBJECT OF OPTIONS THEN DESTRUCTURE IT TO THE REQUIRED ARGUMENTS
+  orderDelivery({ time = "23.00", address, mainIndex = 1, starterIndex = 1 }) {
+    console.log(time, address, mainIndex, starterIndex);
+    console.log(
+      `Order recieved ! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} willl be deliver to ${address} at ${time}`
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -31,6 +42,16 @@ const restaurant = {
     },
   },
 };
+
+// passing an object of options when calling a function
+// this object can then be destructured into constituent variables that the function parameter requires
+// this is really handy coz it enables us not to really have to think about the order that  we  have to pass in arguments when calling functions,   WE CAN JUST PASS IN AN OBJECT OF OPTIONS AND THE FUNCTION WILL AUTOMATICALLY DESTRUCTURE IT WITH THE CORRECT ORDER OF ARGUMENTS
+restaurant.orderDelivery({
+  time: "23.30",
+  address: "sagalla",
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
 // destructuring objects
 // when destructuring objects ,we have to provide the variable names that ecactly match the property names of the vlues we are trying to unpack from an object
