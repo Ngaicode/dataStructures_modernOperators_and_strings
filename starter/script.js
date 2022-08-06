@@ -41,6 +41,12 @@ console.log(name, location, mainMenu);
 const { name: hotel, location: place, mainMenu: menuMain } = restaurant;
 console.log(hotel, location, menuMain);
 
+// setting default values when destructuring objects
+// we simply use the assignment operator to assign default values when destructuring
+// setting up default values is helpful especially in cases where we dont know how the data we'll recieve looks like eg certain properties might not exist on the object so it is prudent that we account for such cases
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
 // Array destructuring
 // desturucturing is simply a way of unpacking values from an array or object into their own separate variables
 // we use array destructuring to  retrieve elements from an array and store them into variables in a very easy way
