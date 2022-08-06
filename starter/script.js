@@ -65,7 +65,7 @@ restaurant.orderDelivery({
 // the spread operator will expand an array into its individual elements
 // we mostly use the spread operator in cases where we'd require multiple values separated by commas eg in an array litteral or when passing arguments to a function
 // we can only use the spread operator when building an array or when passsing values to a function
-
+// we use the spread operator in places where we want an ordered list of values separated by commas(WHEN WE WANT AN ARRAY)
 const arr = [5, 6, 7];
 console.log(...arr);
 const numb = [2, 3, 4, ...arr];
@@ -78,12 +78,18 @@ console.log(menu);
 // one of the most typical use case of the spread operator is to create shallow copies of arrays and also to merge separate arrays into one array
 
 // 1.creating shallow copies of array
+// not a copy but just a different variable pointing to the same object(arrays are objects) in memory
+const relatedCopy = restaurant.mainMenu;
+// proof that this is just a refrence to the same object
+console.log(relatedCopy === restaurant.mainMenu);
 
+// the spread operator creates a shallow copy of the array and doesn't refer to the same object in memory
 const trueUnrelatedCopy = [...restaurant.mainMenu];
 console.log(trueUnrelatedCopy);
+// prooof that this is a shallow copy and not the same array(object)
+console.log(trueUnrelatedCopy === restaurant.mainMenu);
 
 // 2. joining arrays into one
-
 const fullMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(fullMenu);
 
