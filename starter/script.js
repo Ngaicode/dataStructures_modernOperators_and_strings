@@ -32,6 +32,10 @@ const restaurant = {
       `here's your delicious  pasta of ${ing1} , ${ing2} and ${ing3}`
     );
   },
+  orderPizza: function (mainIngridient, ...otherIngridients) {
+    console.log(mainIngridient);
+    console.log(otherIngridients);
+  },
 
   openingHours: {
     thu: {
@@ -48,6 +52,9 @@ const restaurant = {
     },
   },
 };
+
+//ordering pizza
+restaurant.orderPizza("ham", "cheese", "olives");
 
 // passing an object of options when calling a function
 // this object can then be destructured into constituent variables that the function parameter requires
@@ -209,3 +216,54 @@ console.log(newRestaurant);
 // // if the element we are trying to destructure does not exist,it will simply be replaced by the default value of the destructuring operator
 // const [p = 1, q = 1, r = 1] = [8, 6];
 // console.log(p, q, r);
+
+//the rest operator syntax takes multiple values and condesnse them into an array
+//the rest syntax looks similar to the spread operator
+//the main difference is that the spraed operator is used on the right handside of the assignment operator
+
+//---example of the difference between the spread and rest opearator
+//-example 1
+
+//SPREAD bcz its on the right hand side of the assignment operator
+const arr2 = [1, 2, ...[3, 4]];
+console.log(arr2);
+
+//rest synatx because it's to the left of the assignment opearator
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+//MAJOR ---we use the rest operator to pack individual values into an array,it's kinda like the opposite of the spread operator:
+//the typical use case of the rest operator is to collect the rest of the elements that are unused in destructuring and place them into their own array
+//the rest element must always come last
+const [pizza, , risotto, ...other] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, other);
+//while destructuring,the rest synatx shouild always come last
+//the rest operator will not include any skipped over variables/values ,it will always include the REST of the elements that are left after destructuring
+
+//the rest pattern with objects
+//the rest operator will pack the  rest of the remaining properties into their own object
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) functions
+//rest arguments / parameters
+//the rest operator will take multiple values and packs them into an array/objects
+//such a function can take any number of arbitrary arguments and still work perfectly fine
+//this is because ,no matter how many arguments we pass when calling the functions ,they'll just be packed into an array  by the rest operator ,and we can work on that array
+const add = function (...numbers) {
+  console.log(numbers);
+  let summ = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    summ += numbers[i];
+  }
+  console.log(summ);
+};
+
+add(2, 3);
+add(4, 5, 6, 7);
+add(12, 13, 14, 15);
+
+const x = [23, 5, 7];
+add(...x);
