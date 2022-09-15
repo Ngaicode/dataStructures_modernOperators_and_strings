@@ -261,9 +261,42 @@ const add = function (...numbers) {
   console.log(summ);
 };
 
-add(2, 3);
-add(4, 5, 6, 7);
-add(12, 13, 14, 15);
+// add(2, 3);
+// add(4, 5, 6, 7);
+// add(12, 13, 14, 15);
+//
+// const x = [23, 5, 7];
+// add(...x);
+//
+// for (const num of x) {
+//   console.log(num);
+// }
+// const meow = "woof";
+// const cat = function () {
+//   console.log(meow);
+// };
+// console.log();
+// console.log(meow);
+//
 
-const x = [23, 5, 7];
-add(...x);
+//SHART CIRCUITING
+console.log("-----short circuiting using the or operator-------");
+//the logical or || oerrator
+//in the case of the logical or operator,it returns the first truthy values in the evaluation and shorts circuits the  rest of the evaluation
+//in the case where  all values in the evaluation are true ,it'll return the first value
+//in the case where all values are falsey,it;l return the last falsey value
+console.log(2 || "Mjomba");
+console.log("" || 23);
+console.log(true || 0);
+console.log(undefined || null);
+console.log(0 || undefined || "" || false);
+
+//in the case of the logical or operator,it returns the first truthy values in the evaluation and shorts circuits the  rest of the evaluation
+console.log(undefined || 0 || "" || "hello" || 23);
+// a more practical application
+// restaurant.numGuests = 35;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+//doing the same thing but using the short circuit evaluation of the or || operator
+const guest2 = restaurant.numGuests || 23;
+console.log(guest2);
