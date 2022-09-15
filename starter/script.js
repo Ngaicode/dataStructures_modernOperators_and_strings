@@ -298,5 +298,22 @@ console.log(undefined || 0 || "" || "hello" || 23);
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
 //doing the same thing but using the short circuit evaluation of the or || operator
+// we can use the or operator to set default values if the first operand is falsey
 const guest2 = restaurant.numGuests || 23;
 console.log(guest2);
+
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+console.log("short circuiting using the and && opearator----");
+//the logical and opearator returns the first falsey values and exits evaluation
+//in the case where all values are truthy,it'll return the last truthy value in the evaluation
+console.log(0 && "meow");
+console.log("cat" && "meow" && "purr");
+console.log("7" && 7 && 0 && "woof");
+
+// a more practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza("mushroom", "olives", "ham");
+}
+//another way to do this using the logical and && operator
+//we can use the and operator to execute code in the second operand if the first operand is truthy
+restaurant.orderPizza && restaurant.orderPizza("njahi", "nduma");
