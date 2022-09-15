@@ -296,12 +296,12 @@ console.log(undefined || 0 || "" || "hello" || 23);
 // a more practical application
 // restaurant.numGuests = 35;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
 //doing the same thing but using the short circuit evaluation of the or || operator
 // we can use the or operator to set default values if the first operand is falsey
 const guest2 = restaurant.numGuests || 23;
 console.log(guest2);
 
+console.log(guests1);
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 console.log("short circuiting using the and && opearator----");
 //the logical and opearator returns the first falsey values and exits evaluation
@@ -317,3 +317,19 @@ if (restaurant.orderPizza) {
 //another way to do this using the logical and && operator
 //we can use the and operator to execute code in the second operand if the first operand is truthy
 restaurant.orderPizza && restaurant.orderPizza("njahi", "nduma");
+
+//THE NULLISH COALESCING operator
+// restaurant.numGuests = 0;
+//the nullish coalescing operator works on the concept of nullish values ie only null and undefined
+//ONLY NON-NULLISH VALUES WILL SHORT CIRCUIT THE EVALUATION
+//the evaluation will only continue if the first value was nullish or undefined ,or else it'll just return the first  non-nullish value and short circuit the evaluation
+//so in this case ,even though though 0 is falsey,it isn't nullish so it won't short circuit the evaluation
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+console.log(1 ?? undefined);
+console.log(2 ?? null);
+console.log(1 ?? 2 ?? 3);
+//in the case where all values are nullish ,it'll return the last nullish value
+console.log(null ?? undefined);
+//the evaluation will only continue if the first value was nullish or undefined ,or else it'll just return the first  NON-NULLISH value and short circuit the evaluation
+console.log(null ?? "Meow");
