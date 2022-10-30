@@ -11,7 +11,7 @@ const restaurant = {
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
-  order: function (starterIndex, mainIndex) {
+  order: function(starterIndex, mainIndex) {
     // returning an array
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
@@ -32,7 +32,7 @@ const restaurant = {
       `here's your delicious  pasta of ${ing1} , ${ing2} and ${ing3}`
     );
   },
-  orderPizza: function (mainIngridient, ...otherIngridients) {
+  orderPizza: function(mainIngridient, ...otherIngridients) {
     console.log(mainIngridient);
     console.log(otherIngridients);
   },
@@ -344,7 +344,7 @@ const rest1 = {
 
 const rest2 = {
   name: "hoteli",
-  owner: "Ruth Mwathi",
+  owner: "Her she",
 };
 
 //the or  operator works by returning the first truthy value and short circuiting the rest of the evaluation
@@ -448,8 +448,19 @@ function printGoals(...playernames) {
     );
   }
 }
-printGoals("Ruth", "Mwathi", "Gideon");
+printGoals("Her", "she", "java");
 printGoals(...game.scored);
 
 //The team with the lower odd is more likely to win. Print to the console whichteam is more likely to win, without using an if/else statement or the ternaryoperator.
 team1 < team2 && console.log("team1 is more likely to win");
+
+//WORKING WITH STRINGS
+
+const airline = "TAP Air Portugal";
+const plane = "A320";
+console.log(plane[0]);
+console.log('meow')
+
+
+
+
